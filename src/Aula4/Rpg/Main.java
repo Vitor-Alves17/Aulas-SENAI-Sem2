@@ -40,7 +40,7 @@ public class Main {
                 per.getAll();
             }
         }while(per.getVida() > 0);
-        System.out.println("Wasted");
+        System.out.println("Wasted ☠️");
 
 
 
