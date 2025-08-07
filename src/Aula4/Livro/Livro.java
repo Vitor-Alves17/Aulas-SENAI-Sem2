@@ -16,7 +16,7 @@ public class Livro {
         this.autor = autor;
     }
     public void setNumPaginas(int numPaginas) {
-        while(numPaginas > 5){
+        while(numPaginas < 5){
             System.out.println("Número de páginas inválido. Tente novamente: ");
             numPaginas = ler.nextInt();
         }
