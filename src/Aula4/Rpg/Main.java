@@ -1,7 +1,5 @@
 package Aula4.Rpg;
 
-import Aula3.Pessoa.Pessoa;
-
 import java.util.Scanner;
 
 public class Main {
