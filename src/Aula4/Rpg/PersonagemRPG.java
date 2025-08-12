@@ -37,8 +37,18 @@ public class PersonagemRPG {
     }
     public void setNivel(int nivel) {
         this.nivel = nivel;
+        while(nivel < 1) {
+            System.out.println("Nivel inválido, tente novamente: ");
+            nivel = sc.nextInt();
+        }
+        this.nivel = nivel;
     }
     public void setVida(int vida) {
+        this.vida = vida;
+        while(vida > 100) {
+            System.out.println("Vida inválido, tente novamente: ");
+            vida = sc.nextInt();
+        }
         this.vida = vida;
     }
     public String getNome() {
