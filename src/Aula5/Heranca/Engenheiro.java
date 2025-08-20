@@ -1,4 +1,4 @@
-package Aula5.Herança;
+package Aula5.Heranca;
 
 public class Engenheiro extends Funcionario {
 
