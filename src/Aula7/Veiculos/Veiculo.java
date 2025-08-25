@@ -39,7 +39,7 @@ public class Veiculo {
         System.out.println("Tempo que os veiculos levam em um trajeto de 100Km: ");
         System.out.println("Onibus: " + String.format("%.2f", onibus) + "h (Levando em consideração que ele tem 10 paradas.)");
         System.out.println("Bicicleta: " + String.format("%.2f", bicicleta) + "h");
-        System.out.println("Carro: " + String.format("%.2f", onibus) + "h");
+        System.out.println("Carro: " + String.format("%.2f", carro) + "h");
     }
 
 }
