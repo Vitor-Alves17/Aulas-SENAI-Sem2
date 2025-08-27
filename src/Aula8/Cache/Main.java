@@ -10,6 +10,7 @@ public class Main {
                 Bem-vindo ao simulador de cache! 
                 Digite 1 para iniciar: 
                 """);
+        Cache.mock();
         Cache.veri();
     }
 }
