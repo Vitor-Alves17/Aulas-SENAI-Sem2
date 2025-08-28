@@ -54,23 +54,32 @@ public class Pessoa {
         }
     }
 
-    public void toString(int id) {
+
+    public void toString(int i) {
+        System.out.println("ID: " + cache.get(i).getId() + " Nome: " + cache.get(i).getNome() + " Idade: " + cache.get(i).getIdade() + " Encontrado em cache");
+    }
+
+    public void searchCache(int id) {
         for (int i = 0; i < cache.size(); i++) {
             if (cache.get(i) != null) {
             if (cache.get(i).getId() == id) {
-                System.out.println("ID: " + cache.get(i).getId() + " Nome: " + cache.get(i).getNome() + " Idade: " + cache.get(i).getIdade() + " Encontrado em cache");
+                toString(i);
                 verif = false;
                 break;
             }
             }
         }
     }
+    public void toStringBank(int i) {
+        System.out.println("ID: " + databank.get(i).getId() + " Nome: " + databank.get(i).getNome() + " Idade: " + databank.get(i).getIdade() + " Encontrado no banco de dados");
+    }
 
-    public void toStringBank(int id) {
+    public void searchBank(int id) {
         if (verif) {
             for (int i = 0; i < databank.size(); i++) {
                 if (databank.get(i).getId() == id) {
-                    System.out.println("ID: " + databank.get(i).getId() + " Nome: " + databank.get(i).getNome() + " Idade: " + databank.get(i).getIdade() + " Encontrado no banco de dados");
+                    toStringBank(i);
+                    addUserCache(databank.get(i));
                     System.out.println("Usuario adicionado no cache");
                     return;
                 }
@@ -109,9 +118,8 @@ public class Pessoa {
                     case 2:
                         System.out.println("Digite o id do usuario que deseja procuar: ");
                         int id1 = sc.nextInt();
-                        toString(id1);
-                        toStringBank(id1);
-                        addUserCache(databank.get(id1));
+                        searchCache(id1);
+                        searchBank(id1);
                         verif = true;
                         break;
                 }
