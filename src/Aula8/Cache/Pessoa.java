@@ -54,7 +54,7 @@ public class Pessoa {
         }
     }
 
-    public void searchUserCache(int id) {
+    public void toString(int id) {
         for (int i = 0; i < cache.size(); i++) {
             if (cache.get(i) != null) {
             if (cache.get(i).getId() == id) {
@@ -66,7 +66,7 @@ public class Pessoa {
         }
     }
 
-    public void searchUserData(int id) {
+    public void toStringBank(int id) {
         if (verif) {
             for (int i = 0; i < databank.size(); i++) {
                 if (databank.get(i).getId() == id) {
@@ -109,8 +109,8 @@ public class Pessoa {
                     case 2:
                         System.out.println("Digite o id do usuario que deseja procuar: ");
                         int id1 = sc.nextInt();
-                        searchUserCache(id1);
-                        searchUserData(id1);
+                        toString(id1);
+                        toStringBank(id1);
                         addUserCache(databank.get(id1));
                         verif = true;
                         break;
