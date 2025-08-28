@@ -6,8 +6,7 @@ import static Aula8.Cache.Main.cache;
 import static Aula8.Cache.Main.databank;
 
 public class Pessoa {
-//    private static ArrayList<Pessoa> databank = new ArrayList<>();
-//    private static Pessoa cache[] = new Pessoa[10];
+
     private boolean verif = true;
     private int id = 5;
 
@@ -49,17 +48,17 @@ public class Pessoa {
     }
 
     public void addUserCache(Pessoa user) {
-        for (int i = 0; i < 2; i++) {
-            cache[i + 1] = cache[i];
+        cache.add(user);
+        if (cache.size() > 10) {
+            cache.remove(0);
         }
-        cache[0] = user;
     }
 
     public void searchUserCache(int id) {
-        for (int i = 0; i < cache.length; i++) {
-            if (cache[i] != null) {
-            if (cache[i].getId() == id) {
-                System.out.println("ID: " + cache[i].getId() + " Nome: " + cache[i].getNome() + " Idade: " + cache[i].getIdade() + " Encontrado em cache");
+        for (int i = 0; i < cache.size(); i++) {
+            if (cache.get(i) != null) {
+            if (cache.get(i).getId() == id) {
+                System.out.println("ID: " + cache.get(i).getId() + " Nome: " + cache.get(i).getNome() + " Idade: " + cache.get(i).getIdade() + " Encontrado em cache");
                 verif = false;
                 break;
             }
@@ -72,6 +71,7 @@ public class Pessoa {
             for (int i = 0; i < databank.size(); i++) {
                 if (databank.get(i).getId() == id) {
                     System.out.println("ID: " + databank.get(i).getId() + " Nome: " + databank.get(i).getNome() + " Idade: " + databank.get(i).getIdade() + " Encontrado no banco de dados");
+                    System.out.println("Usuario adicionado no cache");
                     return;
                 }
             }
@@ -111,6 +111,7 @@ public class Pessoa {
                         int id1 = sc.nextInt();
                         searchUserCache(id1);
                         searchUserData(id1);
+                        addUserCache(databank.get(id1));
                         verif = true;
                         break;
                 }

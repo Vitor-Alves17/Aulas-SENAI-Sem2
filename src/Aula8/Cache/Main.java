@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static ArrayList<Pessoa> databank = new ArrayList<>();
-    public static Pessoa cache[] = new Pessoa[10];
+    public static ArrayList<Pessoa> cache = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
