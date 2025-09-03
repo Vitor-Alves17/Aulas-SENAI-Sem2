@@ -50,7 +50,7 @@ public class Pessoa {
     public void addUserCache(Pessoa user) {
         cache.add(user);
         if (cache.size() > 10) {
-            cache.remove(0);
+            cache.removeFirst();
         }
     }
 
