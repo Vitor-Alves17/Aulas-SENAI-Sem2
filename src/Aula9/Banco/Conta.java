@@ -49,6 +49,7 @@ abstract class Conta {
         saldo += deposito;
     }
     abstract public double calcularTarifaMensal();
+    abstract public void acoes();
 
 
 

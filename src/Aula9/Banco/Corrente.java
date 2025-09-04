@@ -10,6 +10,7 @@ public class Corrente extends Conta {
     public double calcularTarifaMensal() {
         return 12.00;
     }
+
     public void acoes(){
         int ver = 0;
         do{
@@ -22,7 +23,7 @@ public class Corrente extends Conta {
                 0 -> Parar
                 """);
         ver = sc.nextInt();
-        while(ver != 1 && ver != 2 && ver != 3){
+        while(ver != 1 && ver != 2 && ver != 3 && ver != 0){
             System.out.println("Digito invalido, tente novamente: ");
             ver = sc.nextInt();
         }
@@ -34,6 +35,8 @@ public class Corrente extends Conta {
                     System.out.println("Quanto deseja depositar?: ");
                     double depo = sc.nextInt();
                     depositar(depo);
+                    System.out.print("Ação executada! Seu saldo atual é de: ");
+                    exibirSaldo();
                     break;
                     case 3:
                         System.out.println("Quanto deseja sacar?: ");
@@ -43,6 +46,8 @@ public class Corrente extends Conta {
                             sacar = sc.nextInt();
                         }
                         sacar(sacar);
+                        System.out.print("Ação executada! Seu saldo atual é de: ");
+                        exibirSaldo();
                         break;
         }
         }while (ver != 0);
