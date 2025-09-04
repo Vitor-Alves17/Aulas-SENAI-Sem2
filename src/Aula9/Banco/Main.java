@@ -27,10 +27,13 @@ public class Main {
             }
             switch (ver) {
                 case 1: corrente.acoes();
+                    System.out.println("Tarifa mensal da conta corrente: R$ " + corrente.calcularTarifaMensal());
                 break;
                 case 2: poupanca.acoes();
+                    System.out.println("Tarifa mensal da conta poupança: R$ " + poupanca.calcularTarifaMensal());
                 break;
                 case 3: pj.acoes();
+                    System.out.println("Tarifa mensal da conta pj: R$ " + pj.calcularTarifaMensal());
                 break;
             }
 

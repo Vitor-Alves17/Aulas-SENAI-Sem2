@@ -9,6 +9,12 @@ public class PessoaJuri extends Conta {
     public double calcularTarifaMensal() {
         return 20.00;
     }
+
+    @Override
+    public void sacar(double valor) {
+        super.sacar(valor + 1.50);
+    }
+    @Override
     public void acoes(){
         int ver = 0;
         do{
@@ -31,17 +37,17 @@ public class PessoaJuri extends Conta {
                     break;
                 case 2:
                     System.out.println("Quanto deseja depositar?: ");
-                    double depo = sc.nextInt();
+                    double depo = sc.nextDouble();
                     depositar(depo);
                     System.out.print("Ação executada! seu saldo atual é de: " );
                     exibirSaldo();
                     break;
                 case 3:
                     System.out.println("Quanto deseja sacar?: ");
-                    double sacar = sc.nextInt();
+                    double sacar = sc.nextDouble();
                     while (sacar > getSaldo()){
                         System.out.println("Você não possui esse valor, tente novamente: ");
-                        sacar = sc.nextInt();
+                        sacar = sc.nextDouble();
                     }
                     sacar(sacar);
                     System.out.print("Ação executada! Seu saldo atual é de: ");
